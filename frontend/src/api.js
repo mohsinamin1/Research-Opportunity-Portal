@@ -11,6 +11,7 @@ async function request(path, options = {}) {
 }
 
 export const getOpportunities = () => request('/opportunities');
+export const getOpportunity = (id) => request(`/opportunities/${id}`);
 export const createOpportunity = (data) => request('/opportunities', { method: 'POST', body: JSON.stringify(data) });
 export const updateOpportunity = (id, data) =>
   request(`/opportunities/${id}`, { method: 'PUT', body: JSON.stringify(data) });

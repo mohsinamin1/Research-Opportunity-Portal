@@ -86,6 +86,6 @@ The project can be submitted with these six meaningful commits:
 5. `docs: add setup and demonstration instructions`
 6. `chore: validate production frontend build`
 
-GitHub repository link: _add your repository URL here before submission._
+GitHub repository link: https://github.com/mohsinamin1/Research-Opportunity-Portal
 
 Do not commit `backend/.env`, passwords, API keys, or other private credentials.

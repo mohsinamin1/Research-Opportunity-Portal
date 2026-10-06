@@ -1,5 +1,5 @@
 import { useEffect, useState } from 'react';
-import { createOpportunity, deleteOpportunity, getOpportunities, updateOpportunity } from './api.js';
+import { createOpportunity, deleteOpportunity, getOpportunities, getOpportunity, updateOpportunity } from './api.js';
 
 const emptyForm = {
   title: '',
@@ -28,6 +28,15 @@ function App() {
       setMessage({ type: 'error', text: error.message });
     } finally {
       setLoading(false);
+    }
+  };
+
+  const handleSelect = async (opportunity) => {
+    try {
+      const details = await getOpportunity(opportunity.id);
+      setSelected(details);
+    } catch {
+      setSelected(opportunity);
     }
   };
 
@@ -119,7 +128,7 @@ function App() {
             <div className="opportunity-list">
               {opportunities.map((opportunity) => (
                 <article className={`opportunity ${selected?.id === opportunity.id ? 'selected' : ''}`} key={opportunity.id}>
-                  <button className="opportunity-main" onClick={() => setSelected(opportunity)}>
+                  <button className="opportunity-main" onClick={() => handleSelect(opportunity)}>
                     <span className="status">{opportunity.status}</span>
                     <h3>{opportunity.title}</h3>
                     <p>{opportunity.research_area} · {opportunity.department}</p>
