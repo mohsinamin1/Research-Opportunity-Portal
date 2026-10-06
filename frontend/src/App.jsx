@@ -133,6 +133,7 @@ function App() {
                       <span className={`status ${opportunity.status === 'Closed' ? 'closed' : ''}`}>
                         <strong>Status:</strong> {opportunity.status}
                       </span>
+                      <span className="opp-id-badge">ID: #{opportunity.id}</span>
                     </div>
                     <h3 className="opp-title"><strong>Research Title:</strong> {opportunity.title}</h3>
                     <p className="opp-meta"><strong>Research Area:</strong> {opportunity.research_area}</p>
@@ -154,12 +155,16 @@ function App() {
       {selected && <section className="card details">
         <div className="section-heading">
           <h2><strong>Research Title:</strong> {selected.title}</h2>
-          <span className={`status ${selected.status === 'Closed' ? 'closed' : ''}`}>
-            <strong>Status:</strong> {selected.status}
-          </span>
+          <div>
+            <span className="opp-id-badge" style={{ marginRight: '8px' }}>ID: #{selected.id}</span>
+            <span className={`status ${selected.status === 'Closed' ? 'closed' : ''}`}>
+              <strong>Status:</strong> {selected.status}
+            </span>
+          </div>
         </div>
         <p><strong>Research Description:</strong> {selected.description}</p>
         <div className="details-grid">
+          <p><strong>Opportunity ID:</strong> #{selected.id}</p>
           <p><strong>Faculty Member:</strong> {selected.faculty_name}</p>
           <p><strong>Department:</strong> {selected.department}</p>
           <p><strong>Research Area:</strong> {selected.research_area}</p>

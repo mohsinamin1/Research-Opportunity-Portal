@@ -24,6 +24,7 @@ button { border: 0; border-radius: 7px; padding: 10px 14px; background: #2468c4;
 .status-badge-wrap { margin-bottom: 6px; }
 .status { display: inline-block; color: #176c3c; background: #e4f6eb; border-radius: 99px; padding: 4px 10px; font-size: .74rem; font-weight: 700; }
 .status.closed { color: #8b1e2d; background: #ffe2e5; }
+.opp-id-badge { display: inline-block; background: #e2e8f0; color: #334155; font-weight: 700; font-size: .74rem; padding: 4px 9px; border-radius: 99px; margin-left: 8px; }
 .opp-title { margin: 6px 0 6px; font-size: 1.05rem; color: #172033; font-weight: 500; }
 .opp-title strong { color: #0e2240; font-weight: 700; }
 .opp-meta { color: #475569; margin: 3px 0; font-size: 0.9rem; }
