@@ -42,6 +42,8 @@ A simple full-stack CRUD application for managing university research openings. 
    DB_NAME=research_portal
    ```
 
+The frontend uses `http://localhost:5000/api` by default. To point it at another API, create `frontend/.env` from `frontend/.env.example`.
+
 ## Run
 
 Run both applications in separate terminals:
