@@ -129,10 +129,15 @@ function App() {
               {opportunities.map((opportunity) => (
                 <article className={`opportunity ${selected?.id === opportunity.id ? 'selected' : ''}`} key={opportunity.id}>
                   <button className="opportunity-main" onClick={() => handleSelect(opportunity)}>
-                    <span className="status">{opportunity.status}</span>
-                    <h3>{opportunity.title}</h3>
-                    <p>{opportunity.research_area} · {opportunity.department}</p>
-                    <small>Deadline: {new Date(opportunity.application_deadline).toLocaleDateString()}</small>
+                    <div className="status-badge-wrap">
+                      <span className={`status ${opportunity.status === 'Closed' ? 'closed' : ''}`}>
+                        <strong>Status:</strong> {opportunity.status}
+                      </span>
+                    </div>
+                    <h3 className="opp-title"><strong>Research Title:</strong> {opportunity.title}</h3>
+                    <p className="opp-meta"><strong>Research Area:</strong> {opportunity.research_area}</p>
+                    <p className="opp-meta"><strong>Department:</strong> {opportunity.department}</p>
+                    <small className="opp-deadline"><strong>Application Deadline:</strong> {opportunity.application_deadline ? new Date(opportunity.application_deadline).toLocaleDateString() : 'N/A'}</small>
                   </button>
                   <div className="item-actions">
                     <button onClick={() => beginEdit(opportunity)}>Edit</button>
@@ -147,12 +152,20 @@ function App() {
       </section>
 
       {selected && <section className="card details">
-        <div className="section-heading"><h2>{selected.title}</h2><span className="status">{selected.status}</span></div>
-        <p>{selected.description}</p>
+        <div className="section-heading">
+          <h2><strong>Research Title:</strong> {selected.title}</h2>
+          <span className={`status ${selected.status === 'Closed' ? 'closed' : ''}`}>
+            <strong>Status:</strong> {selected.status}
+          </span>
+        </div>
+        <p><strong>Research Description:</strong> {selected.description}</p>
         <div className="details-grid">
-          <p><strong>Faculty:</strong> {selected.faculty_name}</p><p><strong>Department:</strong> {selected.department}</p>
-          <p><strong>Area:</strong> {selected.research_area}</p><p><strong>Skills:</strong> {selected.required_skills}</p>
-          <p><strong>Positions:</strong> {selected.available_positions}</p><p><strong>Deadline:</strong> {new Date(selected.application_deadline).toLocaleDateString()}</p>
+          <p><strong>Faculty Member:</strong> {selected.faculty_name}</p>
+          <p><strong>Department:</strong> {selected.department}</p>
+          <p><strong>Research Area:</strong> {selected.research_area}</p>
+          <p><strong>Required Skills:</strong> {selected.required_skills}</p>
+          <p><strong>Available Positions:</strong> {selected.available_positions}</p>
+          <p><strong>Application Deadline:</strong> {selected.application_deadline ? new Date(selected.application_deadline).toLocaleDateString() : 'N/A'}</p>
         </div>
       </section>}
     </main>

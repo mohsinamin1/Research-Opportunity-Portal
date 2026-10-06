@@ -20,7 +20,17 @@ button { border: 0; border-radius: 7px; padding: 10px 14px; background: #2468c4;
 .secondary, .item-actions button { background: #eef3f8; color: #25405e; }.danger { color: #a52235 !important; }
 .form-actions { display: flex; gap: 10px; margin-top: 4px; }.section-heading { display: flex; justify-content: space-between; gap: 10px; align-items: center; }.section-heading span { color: #63758b; font-size: .85rem; }
 .opportunity { padding: 14px 0; border-top: 1px solid #e7edf4; }.opportunity:first-child { border-top: 0; }.opportunity.selected { background: #f3f7fd; margin: 0 -10px; padding: 14px 10px; border-radius: 8px; }
-.opportunity-main { display: block; text-align: left; width: 100%; background: none; color: inherit; padding: 0; }.opportunity h3 { margin: 7px 0 5px; font-size: 1.05rem; }.opportunity p, .opportunity small { color: #66778b; margin: 0; }.status { display: inline-block; color: #176c3c; background: #e4f6eb; border-radius: 99px; padding: 4px 9px; font-size: .72rem; font-weight: 800; }
-.status:has(+ h3) { }.item-actions { display: flex; gap: 7px; margin-top: 10px; }.item-actions button { font-size: .78rem; padding: 7px 10px; }
-.details { margin-top: 22px; }.details p { line-height: 1.6; }.details-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 0 24px; }
+.opportunity-main { display: block; text-align: left; width: 100%; background: none; color: inherit; padding: 0; border: none; font-family: inherit; }
+.status-badge-wrap { margin-bottom: 6px; }
+.status { display: inline-block; color: #176c3c; background: #e4f6eb; border-radius: 99px; padding: 4px 10px; font-size: .74rem; font-weight: 700; }
+.status.closed { color: #8b1e2d; background: #ffe2e5; }
+.opp-title { margin: 6px 0 6px; font-size: 1.05rem; color: #172033; font-weight: 500; }
+.opp-title strong { color: #0e2240; font-weight: 700; }
+.opp-meta { color: #475569; margin: 3px 0; font-size: 0.9rem; }
+.opp-meta strong { color: #1e293b; font-weight: 600; }
+.opp-deadline { display: block; color: #64748b; margin-top: 5px; font-size: 0.82rem; }
+.opp-deadline strong { color: #334155; font-weight: 600; }
+.item-actions { display: flex; gap: 7px; margin-top: 10px; }.item-actions button { font-size: .78rem; padding: 7px 10px; }
+.details { margin-top: 22px; }.details p { line-height: 1.6; margin: 8px 0; }.details strong { color: #122847; }
+.details-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 4px 24px; }
 @media (max-width: 760px) { .layout, .form-grid, .details-grid { grid-template-columns: 1fr; }.hero { padding: 26px; } }
