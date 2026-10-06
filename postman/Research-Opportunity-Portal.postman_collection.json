@@ -1,0 +1,83 @@
+{
+  "info": {
+    "name": "Research Opportunity Portal",
+    "description": "Required CRUD and validation demonstration requests.",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+  },
+  "variable": [
+    { "key": "baseUrl", "value": "http://localhost:5000/api" },
+    { "key": "opportunityId", "value": "1" }
+  ],
+  "item": [
+    {
+      "name": "Create opportunity 1",
+      "request": {
+        "method": "POST",
+        "header": [{ "key": "Content-Type", "value": "application/json" }],
+        "body": { "mode": "raw", "raw": "{\"title\":\"AI in Healthcare\",\"description\":\"Study responsible AI tools for early diagnosis.\",\"research_area\":\"Artificial Intelligence\",\"faculty_name\":\"Dr. Ayesha Khan\",\"department\":\"Computer Science\",\"required_skills\":\"Python, machine learning\",\"available_positions\":2,\"application_deadline\":\"2026-12-15\",\"status\":\"Open\"}" },
+        "url": "{{baseUrl}}/opportunities"
+      }
+    },
+    {
+      "name": "Create opportunity 2",
+      "request": {
+        "method": "POST",
+        "header": [{ "key": "Content-Type", "value": "application/json" }],
+        "body": { "mode": "raw", "raw": "{\"title\":\"Smart Campus Network\",\"description\":\"Improve campus network energy efficiency.\",\"research_area\":\"Computer Networks\",\"faculty_name\":\"Dr. Omar Ali\",\"department\":\"Information Technology\",\"required_skills\":\"Networking, Linux\",\"available_positions\":1,\"application_deadline\":\"2026-11-30\",\"status\":\"Open\"}" },
+        "url": "{{baseUrl}}/opportunities"
+      }
+    },
+    {
+      "name": "Create opportunity 3",
+      "request": {
+        "method": "POST",
+        "header": [{ "key": "Content-Type", "value": "application/json" }],
+        "body": { "mode": "raw", "raw": "{\"title\":\"Sustainable Water Systems\",\"description\":\"Explore low-cost monitoring for water quality.\",\"research_area\":\"Environmental Science\",\"faculty_name\":\"Dr. Sara Malik\",\"department\":\"Civil Engineering\",\"required_skills\":\"Sensors, data analysis\",\"available_positions\":3,\"application_deadline\":\"2027-01-20\",\"status\":\"Open\"}" },
+        "url": "{{baseUrl}}/opportunities"
+      }
+    },
+    {
+      "name": "Get all opportunities",
+      "request": { "method": "GET", "url": "{{baseUrl}}/opportunities" }
+    },
+    {
+      "name": "Get one opportunity",
+      "request": { "method": "GET", "url": "{{baseUrl}}/opportunities/{{opportunityId}}" }
+    },
+    {
+      "name": "Update opportunity",
+      "request": {
+        "method": "PUT",
+        "header": [{ "key": "Content-Type", "value": "application/json" }],
+        "body": { "mode": "raw", "raw": "{\"title\":\"AI in Healthcare - Updated\",\"description\":\"Study responsible AI tools for early diagnosis.\",\"research_area\":\"Artificial Intelligence\",\"faculty_name\":\"Dr. Ayesha Khan\",\"department\":\"Computer Science\",\"required_skills\":\"Python, machine learning, ethics\",\"available_positions\":3,\"application_deadline\":\"2026-12-20\",\"status\":\"Open\"}" },
+        "url": "{{baseUrl}}/opportunities/{{opportunityId}}"
+      }
+    },
+    {
+      "name": "Close opportunity",
+      "request": {
+        "method": "PUT",
+        "header": [{ "key": "Content-Type", "value": "application/json" }],
+        "body": { "mode": "raw", "raw": "{\"title\":\"AI in Healthcare - Updated\",\"description\":\"Study responsible AI tools for early diagnosis.\",\"research_area\":\"Artificial Intelligence\",\"faculty_name\":\"Dr. Ayesha Khan\",\"department\":\"Computer Science\",\"required_skills\":\"Python, machine learning, ethics\",\"available_positions\":3,\"application_deadline\":\"2026-12-20\",\"status\":\"Closed\"}" },
+        "url": "{{baseUrl}}/opportunities/{{opportunityId}}"
+      }
+    },
+    {
+      "name": "Delete opportunity",
+      "request": { "method": "DELETE", "url": "{{baseUrl}}/opportunities/{{opportunityId}}" }
+    },
+    {
+      "name": "Get deleted opportunity (404)",
+      "request": { "method": "GET", "url": "{{baseUrl}}/opportunities/{{opportunityId}}" }
+    },
+    {
+      "name": "Invalid request (400)",
+      "request": {
+        "method": "POST",
+        "header": [{ "key": "Content-Type", "value": "application/json" }],
+        "body": { "mode": "raw", "raw": "{\"title\":\"Missing fields example\"}" },
+        "url": "{{baseUrl}}/opportunities"
+      }
+    }
+  ]
+}
