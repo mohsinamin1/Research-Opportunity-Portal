@@ -4,3 +4,6 @@ dist/
 frontend/.env
 backend/.env
 *.log
+.postman/
+postman/collections/
+postman/globals/
