@@ -3,10 +3,6 @@
 A simple full-stack web portal for university faculty to post and manage student research opportunities.
 
 - **GitHub Repository:** [https://github.com/mohsinamin1/Research-Opportunity-Portal](https://github.com/mohsinamin1/Research-Opportunity-Portal)
-- **Course:** Computer Networks (CN) — Assignment #1
-- **Campus:** FAST-NUCES Peshawar · BS (CS 5B)
-
----
 
 ## Tech Stack
 - **Frontend:** React.js + Vite
